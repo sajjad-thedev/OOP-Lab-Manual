@@ -1,0 +1,11 @@
+**/build/
+
+# Ignore compiled executables and object files
+*.obj
+*.exe
+*.out
+*.o
+
+# OS / Editor generated files
+.DS_Store
+Thumbs.db
