@@ -1,0 +1,1 @@
+After the execution of these two lines, two seperate memory blocks exist. Each memory block contains an instance of the Car object; a and b. each block contains a string value and an int value, both of which are members of the Car class.

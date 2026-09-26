@@ -1,0 +1,1 @@
+"1.5 1.5" gets printed because Student b is a reference to Student a. Since we changed b.gpa from 3 to 1.5, it actually changed the gpa of Student a therefore both would show 1.5.
