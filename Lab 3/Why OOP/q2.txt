@@ -1,0 +1,1 @@
+This demonstrates Polymorphism because the same behavior is acting differently for different classes. For this to be true, the circle and square classes should be inheriting from the shape class.
