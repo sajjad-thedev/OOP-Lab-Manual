@@ -1,0 +1,12 @@
+Mobile Phone Class:
+
+4 Attributes of mobilePhone are:
+1) String modelName (where i would store the model name)
+2) String processor (Where I would store the name of processor)
+3) int ram (where i would store the ram capacity)
+4) int storage (where i would store the storage capacity)
+
+3 Methods:
+1) turnOn (which would turn on the phone)
+2) turnOff (which would turn off the phone)
+3) reboot (which would reboot the phone)
