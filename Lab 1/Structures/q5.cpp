@@ -3,7 +3,7 @@ using namespace std;
 
 class Student {
 private:
-  string id;
+  int id;
   string name;
   string fatherName;
   string gradeLevel;
