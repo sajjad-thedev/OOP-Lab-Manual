@@ -1,31 +1,29 @@
-// Call A and Call C print the copying message and Call B does not print the
-// copying message. Call B behaves differently the A and C because Call B is
-// assigning b1 to already created object b2 therefore the copy constructor is
-// not called.
-
 #include <iostream>
 using namespace std;
 
-class Book {
-private:
-  string title;
+class Student {
+  float gpa;
 
 public:
-  Book(string t) : title(t) {}
-  // copy constructor
-  Book(const Book &source) : title(source.title) {
-    cout << "Copying book: " << title << endl;
+  Student(float gpa) { this->gpa = gpa; }
+
+  float getBalance() const { return gpa; }
+
+  void setBalance(float gpa) {
+    if (gpa >= 0.0 && gpa <= 4.0) {
+      this->gpa = gpa;
+    }
   }
 
-  string getTitle() const { return title; }
+  bool isPassing();
 };
 
-void printBook(Book b) { cout << b.getTitle() << endl; }
+bool Student::isPassing() { return gpa >= 2.0; }
 
 int main(void) {
-  Book b1("C++ Primer"), b2("Clean Code");
-  Book b3 = b1;  // Call A
-  b2 = b1;       // Call B
-  printBook(b1); // Call C
+  Student s1(3.0);
+  Student s2(1.5);
+  s1.isPassing() ? cout << "Pass" << endl : cout << "Fail" << endl;
+  s2.isPassing() ? cout << "Pass" << endl : cout << "Fail" << endl;
   return 0;
 }
