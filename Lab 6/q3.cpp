@@ -1,20 +1,31 @@
+// Call A and Call C print the copying message and Call B does not print the
+// copying message. Call B behaves differently the A and C because Call B is
+// assigning b1 to already created object b2 therefore the copy constructor is
+// not called.
+
 #include <iostream>
 using namespace std;
 
-class Car {
-  string model;
-  static int carCount;
+class Book {
+private:
+  string title;
 
 public:
-  Car() { carCount++; }
-  Car(string m) : model(m) { carCount++; }
-  static int getCarCount() { return carCount; }
+  Book(string t) : title(t) {}
+  // copy constructor
+  Book(const Book &source) : title(source.title) {
+    cout << "Copying book: " << title << endl;
+  }
+
+  string getTitle() const { return title; }
 };
 
-int Car::carCount = 0;
+void printBook(Book b) { cout << b.getTitle() << endl; }
 
-int main() {
-  Car c1, c2, c3, c4;
-  cout << "Count : " << Car::getCarCount() << endl;
+int main(void) {
+  Book b1("C++ Primer"), b2("Clean Code");
+  Book b3 = b1;  // Call A
+  b2 = b1;       // Call B
+  printBook(b1); // Call C
   return 0;
 }

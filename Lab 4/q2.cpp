@@ -1,26 +1,25 @@
 #include <iostream>
 using namespace std;
 
-class BankAccount {
-  string name;
-  float balance;
+class Circle {
+  float radius;
 
 public:
-  BankAccount(string name, float balance) {
-    this->name = name;
-    this->balance = balance;
-  }
-  void setBalance(float b) {
-    if (b >= 0) {
-      this->balance = b;
+  float getRadius() const { return radius; }
+  void setRadius(float r) {
+    if (r > 0) {
+      this->radius = r;
+      cout << "accepted" << endl;
+    } else {
+      cout << "rejected" << endl;
     }
   }
-  float getBalance() const { return balance; };
 };
 
 int main(void) {
-  BankAccount acc("Bilal", 300.0);
-  acc.setBalance(300 - 100);
-  cout << "balance : " << acc.getBalance() << endl;
+  Circle circle;
+  circle.setRadius(-3);
+  circle.setRadius(5);
+  cout << "Result : " << circle.getRadius() << endl;
   return 0;
 }

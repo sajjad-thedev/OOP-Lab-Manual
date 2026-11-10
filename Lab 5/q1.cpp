@@ -1,22 +1,24 @@
 #include <iostream>
 using namespace std;
 
-class Circle {
-private:
-  float radius;
+class Temperature {
+  float celsius;
 
 public:
-  // Default constructor
-  Circle() : radius(1.0) {}
-  Circle(float r) : radius(r) {}
-  float area() const { return 3.14159 * radius * radius; }
+  Temperature() { celsius = 20.0; }
+
+  void setCelsius(float c) {
+    if (c >= -50 && c <= 60) {
+      celsius = c;
+    }
+  }
+
+  float setCelsius() const { return celsius; }
 };
 
 int main(void) {
-  Circle c1;
-  cout << "Area of circle 1 : " << c1.area() << endl;
-
-  Circle c2(3.0);
-  cout << "Area of circle 2 : " << c2.area() << endl;
+  Temperature t;
+  t.setCelsius(-500);
+  cout << "Temperature : " << t.setCelsius() << endl;
   return 0;
 }
